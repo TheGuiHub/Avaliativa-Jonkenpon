@@ -1,0 +1,210 @@
+public class Portugues implements ILangue{
+    @Override
+    public String menu() {
+        String str = "==== Bem-vindo ao jogo JanKenPon ====\n"
+        .concat("Por favor, escolha uma opção:\n")
+        .concat("1 - Pedra (JAN)\n")
+        .concat("2 - Papel (KEN)\n")
+        .concat("3 - Tesoura (PON)\n")
+        .concat("4 - Sair\n")
+        .concat("5 - Mudar o idioma (PT-BR -> FR-CA)\n")
+        .concat("Sua opção: ");
+
+        return str;
+    }
+
+    @Override
+    public String optionIncorrect() {
+        return "Opção incorreta";
+    }
+
+    @Override
+    public String victoire() {
+        return "Parabéns! Você ganhou.";
+    }
+
+    @Override
+    public String defaite() {
+        return "Tente uma outra vez.";
+    }
+
+    @Override
+    public String cravate() {
+        return " Parece que temos um empate!";
+    }
+
+    @Override
+    public String joueur() {
+        return "Opção do jogador da partida ";
+    }
+
+    @Override
+    public String machine() {
+        return "Opção da máquina ";
+    }
+
+    @Override
+    public String sortir() {
+        return "Até mais!";
+    }
+
+    @Override
+    public String erreur(){
+        return "Erro na aplicação, ela será fechada.";
+    }
+}
+
+public class {
+    @Override
+    public String menu() {
+        String str = "==== Bem vindo ao jogo ====\n"
+        .concat("S'Por favor escolha uma opção:\n")
+        .concat("1 - Pedra (JAN)\n")
+        .concat("2 - Papel (KEN)\n")
+        .concat("3 - Tesoura (PON)\n")
+        .concat("4 - Sair\n")
+        .concat("Votre option: ");
+
+        return str;
+    }
+
+    @Override
+    public String optionIncorrect() {
+        return "Opção incorreta";
+    }
+
+    @Override
+    public String victoire() {
+        return "Parabéns você ganhou a partida.";
+    }
+
+    @Override
+    public String defaite() {
+        return "Não foi dessa vez tente novamente.";
+    }
+
+    @Override
+    public String cravate() {
+        return "Ohhhh! Une ublic enum JanKenPon {
+            JAN(1),KEN(2),PON(3), SORTIR(4), LANGUE(5);
+        
+            private int valor;
+            JanKenPon(int valor) {
+                this.valor = valor;
+            }
+        
+            public int getValor(){
+                return this.valor;
+            }
+        
+            public static JanKenPon getValor(int valor){
+                for (JanKenPon jkp : values()) {
+                    if (jkp.getValor() == valor){
+                        return jkp;
+                    }
+                }
+                return null;
+            }
+        }cravate!";
+    }
+
+    @Override
+    public String joueur() {
+        return "Opção do jogador ";
+    }
+
+    @Override
+    public String machine() {
+        return "Opção automática ";
+    }
+
+    @Override
+    public String sortir() {
+        return "A deus!";
+    }
+
+    @Override
+    public String erro(){
+        return "Infelizmente teve um erro na partida.";
+    }
+}
+ublic enum JanKenPon {
+    JAN(1),KEN(2),PON(3), SORTIR(4), LANGUE(5);
+
+    private int valor;
+    JanKenPon(int valor) {
+        this.valor = valor;
+    }
+
+    public int getValor(){
+        return this.valor;
+    }
+
+    public static JanKenPon getValor(int valor){
+        for (JanKenPon jkp : values()) {
+            if (jkp.getValor() == valor){
+                return jkp;
+            }
+        }
+        return null;
+    }
+}
+static void ecrire(Object obj){
+    System.out.println(obj);
+}
+
+Scanner sci = new Scanner(System.in);
+Random rand = new Random();
+
+JanKenPon option = null;
+int resultat = 0;
+
+
+try {
+    do {
+        ecrire(langue.menu());
+
+        option = JanKenPon.getValor(sci.nextInt());
+
+        if (option == null) {
+            ecrire(langue.optionIncorrect());
+            ecrire("");
+        } else if (option == JanKenPon.LANGUE) {
+           { if (langue.getClass() == Francais.class){
+                langue = new Portugues();
+    
+            }
+        } else if (option.getValor() < 4) {
+
+            int choixRand = rand.nextInt(3);
+            choixRand += 1;
+
+            var optionMachine = JanKenPon.getValor(choixRand);
+
+            resultat = option.getValor() + optionMachine.getValor();
+
+            if ((option == JanKenPon.JAN && resultat == 4) ||
+                (option == JanKenPon.KEN && resultat == 3) ||
+                (option == JanKenPon.PON && resultat == 5)) {
+                ecrire(langue.victoire());
+            } else if ((option.getValor() - optionMachine.getValor()) == 0) {
+                ecrire(langue.cravate());
+            } else {
+                ecrire(langue.defaite());
+            }
+
+            ecrire(langue.joueur() + option);
+            ecrire(langue.machine() + optionMachine);
+            ecrire("");
+        }
+
+    } while (option != JanKenPon.SORTIR);
+
+    ecrire(langue.sortir());
+
+}catch (Exception e) {
+    ecrire(langue.erreur());
+    e.printStackTrace();
+} finally {
+    sci.close();
+}
