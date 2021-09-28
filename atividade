@@ -1,7 +1,7 @@
 public class Portugues implements ILangue{
     @Override
     public String menu() {
-        String str = "==== Bem-vindo ao jogo JanKenPon ====\n"
+        String str = "==== Bem-vindo ao jogo JanKenPon ====
         .concat("Por favor, escolha uma opção:\n")
         .concat("1 - Pedra (JAN)\n")
         .concat("2 - Papel (KEN)\n")
