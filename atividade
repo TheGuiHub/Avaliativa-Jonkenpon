@@ -83,9 +83,9 @@ public class {
         return "Não foi dessa vez tente novamente.";
     }
 
-    @Override
-    public String cravate() {
-        return "Ohhhh! Une ublic enum JanKenPon {
+    @sobrepor
+    public String cravate() 
+        return "Você ganhou"
             JAN(1),KEN(2),PON(3), SORTIR(4), LANGUE(5);
         
             private int valor;
@@ -170,7 +170,6 @@ try {
             ecrire(langue.optionIncorrect());
             ecrire("");
         } else if (option == JanKenPon.LANGUE) {
-           { if (langue.getClass() == Francais.class){
                 langue = new Portugues();
     
             }
@@ -190,10 +189,8 @@ try {
             } else if ((option.getValor() - optionMachine.getValor()) == 0) {
                 ecrire(langue.cravate());
             } else {
-                ecrire(langue.defaite());
-            }
+                ecrire(langue.defaite()
 
-            ecrire(langue.joueur() + option);
             ecrire(langue.machine() + optionMachine);
             ecrire("");
         }
